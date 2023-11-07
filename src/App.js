@@ -1,24 +1,16 @@
 // import logo from './logo.svg';
 /* <img src={logo} className="App-logo" alt="logo" /> */
+import { Button, NextUIProvider } from "@nextui-org/react";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NextUIProvider>
+      <div className="App">
+        <h1 className="text-7xl font-bold underline">Hello world!</h1>
+        <Button color="primary">Button</Button>
+      </div>
+    </NextUIProvider>
   );
 }
 
