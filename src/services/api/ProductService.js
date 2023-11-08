@@ -1,9 +1,9 @@
 const options = { method: "GET", headers: { accept: "application/json" } };
 
-export const fetchProducts = async (userSearch) => {
+export const fetchProducts = async (userSearch, page) => {
   try {
     const response = await fetch(
-      `https://scmq7n.a.searchspring.io/api/search/search.json?siteId=scmq7n&resultsFormat=json&resultsPerPage=24&page=1&redirectResponse=direct&q=${userSearch}`,
+      `https://scmq7n.a.searchspring.io/api/search/search.json?siteId=scmq7n&resultsFormat=native&resultsPerPage=24&page=${page}&redirectResponse=direct&q=${userSearch}`,
       options
     );
 

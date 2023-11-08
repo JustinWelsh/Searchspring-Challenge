@@ -18,14 +18,20 @@ import { SearchIcon } from "../common/SearchIcon";
 import SearchInput from "../common/SearchInput";
 import { fetchProducts } from "../../services/api/ProductService";
 
-export default function NavBar({ userSearch, setUserSearch, setResults }) {
+export default function NavBar({
+  userSearch,
+  setUserSearch,
+  setResults,
+  setPagination,
+}) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchProducts(userSearch)
+    fetchProducts(userSearch, 1)
       .then((data) => {
         // Handle successful response here
         console.log("Products fetched:", data);
         setResults(data.results);
+        setPagination(data.pagination);
       })
       .catch((error) => {
         // Handle error here
