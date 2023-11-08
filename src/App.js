@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/layout/NavBar";
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import { fetchProducts } from "./services/api/ProductService";
 import { ProductGrid } from "./components/layout/ProductGrid";
 
