@@ -24,7 +24,10 @@ export const ProductGrid = ({ results }) => {
           </CardBody>
           <CardFooter className="text-small justify-between">
             <b>{item.title}</b>
-            <p className="text-default-500">${item.price}</p>
+            <p className="text-default-500 text-2xl">${item.price}</p>
+            {item.msrp > item.price && (
+              <p className="text-red-500 line-through">${item.msrp}</p>
+            )}
           </CardFooter>
         </Card>
       ))}

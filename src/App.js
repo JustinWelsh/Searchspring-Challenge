@@ -5,7 +5,6 @@ import "./App.css";
 import NavBar from "./components/layout/NavBar";
 import { fetchProducts } from "./services/api/ProductService";
 import { ProductGrid } from "./components/layout/ProductGrid";
-import { Button } from "@nextui-org/react";
 import PaginationBtns from "./components/ui/PaginationBtns";
 
 function App() {
