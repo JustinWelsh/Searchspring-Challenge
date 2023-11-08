@@ -16,7 +16,7 @@ import {
 import { AcmeLogo } from "../common/Logo";
 import { SearchIcon } from "../common/SearchIcon";
 import SearchInput from "../common/SearchInput";
-import { fetchProducts } from "../../services/ProductService";
+import { fetchProducts } from "../../services/api/ProductService";
 
 export default function NavBar({ userSearch, setUserSearch, setResults }) {
   const handleSubmit = (e) => {
