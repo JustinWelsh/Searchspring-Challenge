@@ -1,4 +1,5 @@
 import React from "react";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import {
   Navbar,
   NavbarBrand,
@@ -12,11 +13,13 @@ import {
   DropdownMenu,
   Avatar,
   Button,
+  Badge,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../common/Logo";
 import { SearchIcon } from "../common/SearchIcon";
 import SearchInput from "../common/SearchInput";
 import { fetchProducts } from "../../services/api/ProductService";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function NavBar({
   userSearch,
@@ -39,14 +42,16 @@ export default function NavBar({
       });
   };
   return (
-    <Navbar isBordered className="p-3">
+    <Navbar isBordered className="p-3 opacity-95">
       <NavbarContent justify="start">
         <NavbarBrand className="mr-4">
           <AcmeLogo />
-          <p className="hidden sm:block font-bold text-inherit">ACME</p>
+          <p className="hidden sm:block text-3xl font-bold text-inherit textShadow">
+            StellarStyle
+          </p>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-3">
-          <NavbarItem>
+          {/* <NavbarItem>
             <Link color="foreground" href="#">
               Features
             </Link>
@@ -60,7 +65,7 @@ export default function NavBar({
             <Link color="foreground" href="#">
               Integrations
             </Link>
-          </NavbarItem>
+          </NavbarItem> */}
         </NavbarContent>
       </NavbarContent>
 
@@ -68,13 +73,18 @@ export default function NavBar({
         <form onSubmit={handleSubmit}>
           <div className="flex">
             <SearchInput setUserSearch={setUserSearch} />
-            <Button type="submit" color="primary" className="rounded-s-none">
-              Button
+            <Button
+              type="submit"
+              color="default"
+              className="hidden md:block rounded-s-none"
+            >
+              Search
             </Button>
           </div>
         </form>
-        <div>
-          Cart <span>0</span>
+        <div className="flex gap-1">
+          <FontAwesomeIcon icon={faBagShopping} className="text-2xl" />
+          <Badge content="0" color="danger"></Badge>
         </div>
         {/* <Dropdown placement="bottom-end">
           <DropdownTrigger>
