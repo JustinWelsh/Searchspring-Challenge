@@ -20,12 +20,14 @@ import { SearchIcon } from "../common/SearchIcon";
 import SearchInput from "../common/SearchInput";
 import { fetchProducts } from "../../services/api/ProductService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGem } from "@fortawesome/free-regular-svg-icons";
 
 export default function NavBar({
   userSearch,
   setUserSearch,
   setResults,
   setPagination,
+  cart,
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,10 +44,10 @@ export default function NavBar({
       });
   };
   return (
-    <Navbar isBordered className="p-3 opacity-95">
+    <Navbar isBordered className="p-3 opacity-95 shadow-lg z-50">
       <NavbarContent justify="start">
-        <NavbarBrand className="mr-4">
-          <AcmeLogo />
+        <NavbarBrand className="sm:mr-4">
+          <FontAwesomeIcon icon={faGem} className="text-3xl p-2" />
           <p className="hidden sm:block text-3xl font-bold text-inherit textShadow">
             StellarStyle
           </p>
@@ -70,21 +72,17 @@ export default function NavBar({
       </NavbarContent>
 
       <NavbarContent as="div" className="items-center" justify="end">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="hidden sm:block">
           <div className="flex">
             <SearchInput setUserSearch={setUserSearch} />
-            <Button
-              type="submit"
-              color="default"
-              className="hidden md:block rounded-s-none"
-            >
+            <Button type="submit" color="default" className="hidden md:block">
               Search
             </Button>
           </div>
         </form>
         <div className="flex gap-1">
           <FontAwesomeIcon icon={faBagShopping} className="text-2xl" />
-          <Badge content="0" color="danger"></Badge>
+          <Badge content={cart} color="danger"></Badge>
         </div>
         {/* <Dropdown placement="bottom-end">
           <DropdownTrigger>

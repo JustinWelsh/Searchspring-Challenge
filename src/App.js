@@ -11,6 +11,7 @@ function App() {
   const [userSearch, setUserSearch] = useState("");
   const [results, setResults] = useState([]);
   const [pagination, setPagination] = useState({});
+  const [cart, setCart] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,6 +36,7 @@ function App() {
         setUserSearch={setUserSearch}
         setResults={setResults}
         setPagination={setPagination}
+        cart={cart}
       />
       <PaginationBtns
         userSearch={userSearch}
@@ -42,7 +44,7 @@ function App() {
         pagination={pagination}
         setPagination={setPagination}
       />
-      <ProductGrid results={results} />
+      <ProductGrid results={results} setCart={setCart} />
       <PaginationBtns
         userSearch={userSearch}
         setResults={setResults}
