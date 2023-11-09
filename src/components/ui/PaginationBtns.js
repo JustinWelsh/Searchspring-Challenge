@@ -35,9 +35,10 @@ const PaginationBtns = ({
     }
   };
   return (
-    <div className="flex justify-center gap-8">
+    <div className="flex justify-center gap-8 p-10">
       <Button
-        color="primary"
+        // color="primary"
+        className="bg-gradient-to-r from-cyan-400 to-blue-400 text-white"
         onClick={handlePrev}
         isDisabled={pagination.currentPage === 1}
       >
@@ -45,7 +46,8 @@ const PaginationBtns = ({
       </Button>
 
       <Button
-        color="primary"
+        // color="primary"
+        className="bg-gradient-to-r from-cyan-400 to-blue-400 text-white"
         onClick={handleNext}
         isDisabled={pagination.currentPage === pagination.totalPages}
       >
