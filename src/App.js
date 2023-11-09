@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-wallpaper min-h-screen">
       <NavBar
         userSearch={userSearch}
         setUserSearch={setUserSearch}
