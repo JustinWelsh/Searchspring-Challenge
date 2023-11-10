@@ -1,13 +1,11 @@
 import { Button } from "@nextui-org/react";
 import React from "react";
 import { fetchProducts } from "../../services/api/ProductService";
+import { useUserContext } from "../../services/context/UserContext";
 
-const PaginationBtns = ({
-  userSearch,
-  setResults,
-  pagination,
-  setPagination,
-}) => {
+const PaginationBtns = ({ setResults, pagination, setPagination }) => {
+  const { userSearch } = useUserContext();
+
   const handlePrev = async () => {
     console.log("prev");
     try {

@@ -21,14 +21,11 @@ import SearchInput from "../common/SearchInput";
 import { fetchProducts } from "../../services/api/ProductService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem } from "@fortawesome/free-regular-svg-icons";
+import { useUserContext } from "../../services/context/UserContext";
 
-export default function NavBar({
-  userSearch,
-  setUserSearch,
-  setResults,
-  setPagination,
-  cart,
-}) {
+export default function NavBar({ setResults, setPagination, cart }) {
+  const { userSearch, setUserSearch } = useUserContext();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchProducts(userSearch, 1)
