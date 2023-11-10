@@ -14,10 +14,17 @@ export default function NavBar({ setResults }) {
     <Navbar isBordered className="p-3 opacity-95 shadow-lg z-50">
       <NavbarContent justify="start">
         <NavbarBrand className="sm:mr-4">
-          <FontAwesomeIcon icon={faGem} className="text-3xl p-2" />
-          <p className="hidden sm:block text-3xl font-bold text-inherit textShadow">
-            StellarStyle
-          </p>
+          <FontAwesomeIcon icon={faGem} className="text-5xl p-2" />
+          <div>
+            {/* <p className="hidden sm:block text-3xl font-bold text-inherit textShadow font-CruelMachine">
+              StellarStyle
+            </p> */}
+            <img
+              src="https://see.fontimg.com/api/renderfont4/PKgnB/eyJyIjoiZnMiLCJoIjo2NiwidyI6MTAwMCwiZnMiOjY2LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/U3RlbGxhclN0eWxl/cruel-machine.png"
+              alt="Graffiti fonts"
+            />
+            <p className="">Premium Apparel.</p>
+          </div>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-3"></NavbarContent>
       </NavbarContent>
