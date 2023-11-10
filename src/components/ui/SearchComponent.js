@@ -13,7 +13,6 @@ const SearchComponent = ({ classes }) => {
     fetchProducts(userSearch, 1)
       .then((data) => {
         // Handle successful response here
-        console.log("Products fetched:", data);
         setProducts(data.results);
         setPagination(data.pagination);
       })

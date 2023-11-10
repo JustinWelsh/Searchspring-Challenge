@@ -8,26 +8,20 @@ const PaginationBtns = () => {
     useUserContext();
 
   const handlePrev = async () => {
-    console.log("prev");
     try {
       const data = await fetchProducts(userSearch, pagination.previousPage);
-      console.log("EFFECT", data);
       setProducts(data.results);
       setPagination(data.pagination);
-      console.log("pagination", pagination);
     } catch (error) {
       // Handle any errors here
       console.error("Error fetching products:", error);
     }
   };
   const handleNext = async () => {
-    console.log("next");
     try {
       const data = await fetchProducts(userSearch, pagination.nextPage);
-      console.log("EFFECT", data);
       setProducts(data.results);
       setPagination(data.pagination);
-      console.log("pagination", pagination);
     } catch (error) {
       // Handle any errors here
       console.error("Error fetching products:", error);
