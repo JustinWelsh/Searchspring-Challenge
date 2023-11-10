@@ -9,9 +9,9 @@ import PaginationBtns from "./components/ui/PaginationBtns";
 import { useUserContext } from "./services/context/UserContext";
 
 function App() {
-  const [pagination, setPagination] = useState({});
+  // const [pagination, setPagination] = useState({});
 
-  const { userSearch, setProducts } = useUserContext();
+  const { userSearch, setProducts, setPagination } = useUserContext();
 
   useEffect(() => {
     console.log(userSearch);
@@ -21,7 +21,6 @@ function App() {
         console.log("EFFECT", data);
         setProducts(data.results);
         setPagination(data.pagination);
-        console.log("pagination", pagination);
       } catch (error) {
         // Handle any errors here
         console.error("Error fetching products:", error);
@@ -32,10 +31,10 @@ function App() {
 
   return (
     <div className="bg-wallpaper min-h-screen">
-      <NavBar setResults={setProducts} setPagination={setPagination} />
-      <PaginationBtns pagination={pagination} setPagination={setPagination} />
+      <NavBar setResults={setProducts} />
+      <PaginationBtns />
       <ProductGrid />
-      <PaginationBtns pagination={pagination} setPagination={setPagination} />
+      <PaginationBtns />
     </div>
   );
 }

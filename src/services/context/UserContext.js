@@ -6,6 +6,7 @@ const UserContextProvider = ({ children }) => {
   const [userSearch, setUserSearch] = useState("");
   const [cart, setCart] = useState(0);
   const [products, setProducts] = useState([]);
+  const [pagination, setPagination] = useState({});
 
   return (
     <UserContext.Provider
@@ -16,6 +17,8 @@ const UserContextProvider = ({ children }) => {
         setCart,
         products,
         setProducts,
+        pagination,
+        setPagination,
       }}
     >
       {children}

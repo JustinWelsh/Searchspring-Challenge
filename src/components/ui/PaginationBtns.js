@@ -3,8 +3,9 @@ import React from "react";
 import { fetchProducts } from "../../services/api/ProductService";
 import { useUserContext } from "../../services/context/UserContext";
 
-const PaginationBtns = ({ pagination, setPagination }) => {
-  const { userSearch, setProducts } = useUserContext();
+const PaginationBtns = () => {
+  const { userSearch, setProducts, pagination, setPagination } =
+    useUserContext();
 
   const handlePrev = async () => {
     console.log("prev");

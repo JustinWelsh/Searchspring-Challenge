@@ -23,8 +23,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem } from "@fortawesome/free-regular-svg-icons";
 import { useUserContext } from "../../services/context/UserContext";
 
-export default function NavBar({ setResults, setPagination }) {
-  const { userSearch, setUserSearch, cart } = useUserContext();
+export default function NavBar({ setResults }) {
+  const { userSearch, setUserSearch, cart, setPagination } = useUserContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
