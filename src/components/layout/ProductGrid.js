@@ -1,24 +1,11 @@
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Image,
-} from "@nextui-org/react";
+import { Button, Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import React from "react";
 import { useUserContext } from "../../services/context/UserContext";
 
 export const ProductGrid = () => {
   const { setCart, products } = useUserContext();
-
-  const getDiscount = (msrp, price) => {
-    const difference = msrp - price;
-    const result = (difference / price) * 100;
-    return Math.floor(result);
-  };
 
   const handleAddToCart = () => {
     setCart((prev) => prev + 1);
@@ -39,7 +26,6 @@ export const ProductGrid = () => {
                 <div className="py-5 px-20 absolute z-30 top-5 -left-[55px] -rotate-45 bg-red-500 opacity-80"></div>
 
                 <span className="p-2 px-12 text-white absolute z-30 top-3 -left-12 -rotate-45 font-bold">
-                  {/* {getDiscount(product.msrp, product.price)}% Off */}
                   On Sale!
                 </span>
               </>
