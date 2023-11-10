@@ -53,3 +53,9 @@
      - Fourth value: Color (rgba or hex)
   */
 }
+@font-face {
+  font-family: "CruelMachine";
+  src: local("Lato"), url("/public/cruel-machine-font/CruelMachine-PKgnB.otf");
+  font-weight: normal;
+  font-style: normal;
+}
