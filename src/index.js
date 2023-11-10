@@ -3,12 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { NextUIProvider } from "@nextui-org/react";
+import { UserContextProvider } from "./services/context/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <NextUIProvider>
-      <App />
+      <UserContextProvider>
+        <App />
+      </UserContextProvider>
     </NextUIProvider>
   </React.StrictMode>
 );
