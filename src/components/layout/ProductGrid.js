@@ -59,17 +59,19 @@ export const ProductGrid = () => {
             <b>{product.title}</b>
             <div className="flex justify-between mt-4">
               <div className="flex">
-                <p className="text-green-500 text-2xl textShadow font-semibold">
+                <p className="text-green-500 text-2xl font-semibold">
                   ${product.price}
                 </p>
                 {product.msrp > product.price && (
-                  <p className="text-slate-300 line-through">${product.msrp}</p>
+                  <p className="text-slate-500 line-through">${product.msrp}</p>
                 )}
               </div>
               <Button
                 className="bg-gradient-to-r from-amber-200 to-amber-300"
                 size="sm"
                 onClick={handleAddToCart}
+                type="button"
+                aria-label="Add to Cart"
               >
                 <FontAwesomeIcon icon={faBagShopping} className="text-xl" />
               </Button>
