@@ -24,7 +24,8 @@ import { faGem } from "@fortawesome/free-regular-svg-icons";
 import { useUserContext } from "../../services/context/UserContext";
 
 export default function NavBar({ setResults }) {
-  const { userSearch, setUserSearch, cart, setPagination } = useUserContext();
+  const { userSearch, setUserSearch, cart, setProducts, setPagination } =
+    useUserContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +33,7 @@ export default function NavBar({ setResults }) {
       .then((data) => {
         // Handle successful response here
         console.log("Products fetched:", data);
-        setResults(data.results);
+        setProducts(data.results);
         setPagination(data.pagination);
       })
       .catch((error) => {

@@ -9,8 +9,6 @@ import PaginationBtns from "./components/ui/PaginationBtns";
 import { useUserContext } from "./services/context/UserContext";
 
 function App() {
-  // const [pagination, setPagination] = useState({});
-
   const { userSearch, setProducts, setPagination } = useUserContext();
 
   useEffect(() => {
@@ -31,7 +29,7 @@ function App() {
 
   return (
     <div className="bg-wallpaper min-h-screen">
-      <NavBar setResults={setProducts} />
+      <NavBar />
       <PaginationBtns />
       <ProductGrid />
       <PaginationBtns />
