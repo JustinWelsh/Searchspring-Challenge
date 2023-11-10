@@ -1,5 +1,3 @@
-// import logo from './logo.svg';
-/* <img src={logo} className="App-logo" alt="logo" /> */
 import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/layout/NavBar";
@@ -13,11 +11,9 @@ function App() {
   const { userSearch, setProducts, setPagination } = useUserContext();
 
   useEffect(() => {
-    console.log(userSearch);
     const fetchData = async () => {
       try {
         const data = await fetchProducts(userSearch, 1);
-        console.log("EFFECT", data);
         setProducts(data.results);
         setPagination(data.pagination);
       } catch (error) {
