@@ -7,6 +7,7 @@ import { fetchProducts } from "./services/api/ProductService";
 import { ProductGrid } from "./components/layout/ProductGrid";
 import PaginationBtns from "./components/ui/PaginationBtns";
 import { useUserContext } from "./services/context/UserContext";
+import SearchComponent from "./components/ui/SearchComponent";
 
 function App() {
   const { userSearch, setProducts, setPagination } = useUserContext();
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="bg-wallpaper min-h-screen">
       <NavBar />
+      <SearchComponent classes="py-4 px-10 block sm:hidden bg-black/80" />
       <PaginationBtns />
       <ProductGrid />
       <PaginationBtns />

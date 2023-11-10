@@ -22,25 +22,12 @@ import { fetchProducts } from "../../services/api/ProductService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem } from "@fortawesome/free-regular-svg-icons";
 import { useUserContext } from "../../services/context/UserContext";
+import SearchComponent from "../ui/SearchComponent";
 
 export default function NavBar({ setResults }) {
   const { userSearch, setUserSearch, cart, setProducts, setPagination } =
     useUserContext();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetchProducts(userSearch, 1)
-      .then((data) => {
-        // Handle successful response here
-        console.log("Products fetched:", data);
-        setProducts(data.results);
-        setPagination(data.pagination);
-      })
-      .catch((error) => {
-        // Handle error here
-        console.error("Error fetching products:", error);
-      });
-  };
   return (
     <Navbar isBordered className="p-3 opacity-95 shadow-lg z-50">
       <NavbarContent justify="start">
@@ -70,14 +57,8 @@ export default function NavBar({ setResults }) {
       </NavbarContent>
 
       <NavbarContent as="div" className="items-center" justify="end">
-        <form onSubmit={handleSubmit} className="hidden sm:block">
-          <div className="flex">
-            <SearchInput setUserSearch={setUserSearch} />
-            <Button type="submit" color="default" className="hidden md:block">
-              Search
-            </Button>
-          </div>
-        </form>
+        <SearchComponent classes="hidden md:block" />
+
         <div className="flex gap-1">
           <FontAwesomeIcon icon={faBagShopping} className="text-2xl" />
           <Badge content={cart} color="danger"></Badge>

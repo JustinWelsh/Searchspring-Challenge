@@ -2,7 +2,7 @@ import { Input } from "@nextui-org/react";
 import React from "react";
 import { SearchIcon } from "./SearchIcon";
 
-function SearchInput({ setUserSearch }) {
+function SearchInput({ setUserSearch, classes }) {
   return (
     <Input
       onChange={(e) => {
