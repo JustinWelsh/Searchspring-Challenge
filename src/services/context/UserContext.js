@@ -4,9 +4,10 @@ const UserContext = createContext({});
 
 const UserContextProvider = ({ children }) => {
   const [userSearch, setUserSearch] = useState("");
+  const [cart, setCart] = useState(0);
 
   return (
-    <UserContext.Provider value={{ userSearch, setUserSearch }}>
+    <UserContext.Provider value={{ userSearch, setUserSearch, cart, setCart }}>
       {children}
     </UserContext.Provider>
   );

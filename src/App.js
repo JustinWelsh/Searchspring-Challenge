@@ -11,9 +11,9 @@ import { useUserContext } from "./services/context/UserContext";
 function App() {
   const [results, setResults] = useState([]);
   const [pagination, setPagination] = useState({});
-  const [cart, setCart] = useState(0);
+  // const [cart, setCart] = useState(0);
 
-  const { userSearch, setUserSearch } = useUserContext();
+  const { userSearch } = useUserContext();
 
   useEffect(() => {
     console.log(userSearch);
@@ -34,17 +34,13 @@ function App() {
 
   return (
     <div className="bg-wallpaper min-h-screen">
-      <NavBar
-        setResults={setResults}
-        setPagination={setPagination}
-        cart={cart}
-      />
+      <NavBar setResults={setResults} setPagination={setPagination} />
       <PaginationBtns
         setResults={setResults}
         pagination={pagination}
         setPagination={setPagination}
       />
-      <ProductGrid results={results} setCart={setCart} />
+      <ProductGrid results={results} />
       <PaginationBtns
         setResults={setResults}
         pagination={pagination}

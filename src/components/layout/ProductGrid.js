@@ -9,8 +9,11 @@ import {
   Image,
 } from "@nextui-org/react";
 import React from "react";
+import { useUserContext } from "../../services/context/UserContext";
 
-export const ProductGrid = ({ results, setCart }) => {
+export const ProductGrid = ({ results }) => {
+  const { setCart } = useUserContext();
+
   const getDiscount = (msrp, price) => {
     const difference = msrp - price;
     const result = (difference / price) * 100;
@@ -22,7 +25,7 @@ export const ProductGrid = ({ results, setCart }) => {
   };
   return (
     <div className="py-5 px-10 gap-10 justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
-      {results.map((product, index) => (
+      {results.map((product) => (
         <Card
           key={product.id}
           className=""
