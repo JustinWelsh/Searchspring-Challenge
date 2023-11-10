@@ -33,7 +33,9 @@ function App() {
       <NavBar />
       <SearchComponent classes="py-4 px-10 block sm:hidden bg-black/80" />
       <PaginationBtns />
-      <ProductGrid />
+      <div className="flex justify-center">
+        <ProductGrid />
+      </div>
       <PaginationBtns />
     </div>
   );
