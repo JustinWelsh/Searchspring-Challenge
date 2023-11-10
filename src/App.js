@@ -9,11 +9,9 @@ import PaginationBtns from "./components/ui/PaginationBtns";
 import { useUserContext } from "./services/context/UserContext";
 
 function App() {
-  const [results, setResults] = useState([]);
   const [pagination, setPagination] = useState({});
-  // const [cart, setCart] = useState(0);
 
-  const { userSearch } = useUserContext();
+  const { userSearch, setProducts } = useUserContext();
 
   useEffect(() => {
     console.log(userSearch);
@@ -21,7 +19,7 @@ function App() {
       try {
         const data = await fetchProducts(userSearch, 1);
         console.log("EFFECT", data);
-        setResults(data.results);
+        setProducts(data.results);
         setPagination(data.pagination);
         console.log("pagination", pagination);
       } catch (error) {
@@ -34,18 +32,10 @@ function App() {
 
   return (
     <div className="bg-wallpaper min-h-screen">
-      <NavBar setResults={setResults} setPagination={setPagination} />
-      <PaginationBtns
-        setResults={setResults}
-        pagination={pagination}
-        setPagination={setPagination}
-      />
-      <ProductGrid results={results} />
-      <PaginationBtns
-        setResults={setResults}
-        pagination={pagination}
-        setPagination={setPagination}
-      />
+      <NavBar setResults={setProducts} setPagination={setPagination} />
+      <PaginationBtns pagination={pagination} setPagination={setPagination} />
+      <ProductGrid />
+      <PaginationBtns pagination={pagination} setPagination={setPagination} />
     </div>
   );
 }

@@ -5,9 +5,19 @@ const UserContext = createContext({});
 const UserContextProvider = ({ children }) => {
   const [userSearch, setUserSearch] = useState("");
   const [cart, setCart] = useState(0);
+  const [products, setProducts] = useState([]);
 
   return (
-    <UserContext.Provider value={{ userSearch, setUserSearch, cart, setCart }}>
+    <UserContext.Provider
+      value={{
+        userSearch,
+        setUserSearch,
+        cart,
+        setCart,
+        products,
+        setProducts,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

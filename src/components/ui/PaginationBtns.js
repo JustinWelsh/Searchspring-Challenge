@@ -3,15 +3,15 @@ import React from "react";
 import { fetchProducts } from "../../services/api/ProductService";
 import { useUserContext } from "../../services/context/UserContext";
 
-const PaginationBtns = ({ setResults, pagination, setPagination }) => {
-  const { userSearch } = useUserContext();
+const PaginationBtns = ({ pagination, setPagination }) => {
+  const { userSearch, setProducts } = useUserContext();
 
   const handlePrev = async () => {
     console.log("prev");
     try {
       const data = await fetchProducts(userSearch, pagination.previousPage);
       console.log("EFFECT", data);
-      setResults(data.results);
+      setProducts(data.results);
       setPagination(data.pagination);
       console.log("pagination", pagination);
     } catch (error) {
@@ -24,7 +24,7 @@ const PaginationBtns = ({ setResults, pagination, setPagination }) => {
     try {
       const data = await fetchProducts(userSearch, pagination.nextPage);
       console.log("EFFECT", data);
-      setResults(data.results);
+      setProducts(data.results);
       setPagination(data.pagination);
       console.log("pagination", pagination);
     } catch (error) {

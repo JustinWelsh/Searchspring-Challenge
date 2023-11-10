@@ -11,8 +11,8 @@ import {
 import React from "react";
 import { useUserContext } from "../../services/context/UserContext";
 
-export const ProductGrid = ({ results }) => {
-  const { setCart } = useUserContext();
+export const ProductGrid = () => {
+  const { setCart, products } = useUserContext();
 
   const getDiscount = (msrp, price) => {
     const difference = msrp - price;
@@ -25,7 +25,7 @@ export const ProductGrid = ({ results }) => {
   };
   return (
     <div className="py-5 px-10 gap-10 justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
-      {results.map((product) => (
+      {products.map((product) => (
         <Card
           key={product.id}
           className=""
