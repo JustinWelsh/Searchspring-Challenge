@@ -8,6 +8,7 @@ import {
   ModalHeader,
 } from "@nextui-org/react";
 import React from "react";
+import AddToCartBtn from "../common/AddToCartBtn";
 
 const ProductDetails = ({ product }) => {
   return (
@@ -64,9 +65,7 @@ const ProductDetails = ({ product }) => {
             <Button color="default" variant="light" onPress={onClose}>
               Close
             </Button>
-            <Button color="primary" onPress={onClose}>
-              Action
-            </Button>
+            <AddToCartBtn />
           </ModalFooter>
         </>
       )}

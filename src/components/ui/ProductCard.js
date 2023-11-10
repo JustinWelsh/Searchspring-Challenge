@@ -12,14 +12,11 @@ import {
 import React from "react";
 import { useUserContext } from "../../services/context/UserContext";
 import ProductDetails from "./ProductDetails";
+import AddToCartBtn from "../common/AddToCartBtn";
 
 const ProductCard = ({ product }) => {
-  const { setCart } = useUserContext();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const handleAddToCart = () => {
-    setCart((prev) => prev + 1);
-  };
   return (
     <Card className="py-4 w-[290]">
       <CardBody className="overflow-visible py-2">
@@ -55,15 +52,7 @@ const ProductCard = ({ product }) => {
               <p className="text-slate-500 line-through">${product.msrp}</p>
             )}
           </div>
-          <Button
-            className="bg-amber-200"
-            size="sm"
-            onClick={handleAddToCart}
-            type="button"
-            aria-label="Add to Cart"
-          >
-            <FontAwesomeIcon icon={faBagShopping} className="text-xl" />
-          </Button>
+          <AddToCartBtn />
         </div>
       </CardFooter>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
