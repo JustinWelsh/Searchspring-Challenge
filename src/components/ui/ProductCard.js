@@ -5,15 +5,21 @@ import {
   Card,
   CardBody,
   CardFooter,
-  CardHeader,
   Image,
-  Skeleton,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  useDisclosure,
 } from "@nextui-org/react";
 import React from "react";
 import { useUserContext } from "../../services/context/UserContext";
+import ProductDetails from "./ProductDetails";
 
 const ProductCard = ({ product }) => {
   const { setCart } = useUserContext();
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const handleAddToCart = () => {
     setCart((prev) => prev + 1);
@@ -31,6 +37,7 @@ const ProductCard = ({ product }) => {
           </>
         )}
         <Image
+          onClick={onOpen}
           isZoomed
           shadow="sm"
           alt={product.title}
@@ -63,6 +70,9 @@ const ProductCard = ({ product }) => {
           </Button>
         </div>
       </CardFooter>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ProductDetails product={product} />
+      </Modal>
     </Card>
   );
 };
