@@ -17,7 +17,6 @@ function App() {
         setProducts(data.results);
         setPagination(data.pagination);
       } catch (error) {
-        // Handle any errors here
         console.error("Error fetching products:", error);
       }
     };

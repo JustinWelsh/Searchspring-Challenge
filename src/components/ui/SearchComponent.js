@@ -12,12 +12,10 @@ const SearchComponent = ({ classes }) => {
     e.preventDefault();
     fetchProducts(userSearch, 1)
       .then((data) => {
-        // Handle successful response here
         setProducts(data.results);
         setPagination(data.pagination);
       })
       .catch((error) => {
-        // Handle error here
         console.error("Error fetching products:", error);
       });
   };

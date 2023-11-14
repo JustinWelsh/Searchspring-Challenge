@@ -16,9 +16,6 @@ export default function NavBar({ setResults }) {
         <NavbarBrand className="sm:mr-4">
           <FontAwesomeIcon icon={faGem} className="text-5xl p-2" />
           <div>
-            {/* <p className="hidden sm:block text-3xl font-bold text-inherit textShadow font-CruelMachine">
-              StellarStyle
-            </p> */}
             <img
               src="https://see.fontimg.com/api/renderfont4/PKgnB/eyJyIjoiZnMiLCJoIjo2NiwidyI6MTAwMCwiZnMiOjY2LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/U3RlbGxhclN0eWxl/cruel-machine.png"
               alt="Graffiti fonts"

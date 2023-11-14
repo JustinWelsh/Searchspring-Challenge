@@ -13,7 +13,6 @@ const PaginationBtns = () => {
       setProducts(data.results);
       setPagination(data.pagination);
     } catch (error) {
-      // Handle any errors here
       console.error("Error fetching products:", error);
     }
   };
@@ -23,14 +22,12 @@ const PaginationBtns = () => {
       setProducts(data.results);
       setPagination(data.pagination);
     } catch (error) {
-      // Handle any errors here
       console.error("Error fetching products:", error);
     }
   };
   return (
     <div className="flex justify-center gap-8 p-10">
       <Button
-        // className="bg-gradient-to-r from-cyan-300 to-blue-300 text-white textShadow shadow-lg shadow-cyan-500/50"
         className="bg-gradient-to-r from-amber-500 to-amber-700 text-white textShadow shadow-lg shadow-amber-200/50"
         onClick={handlePrev}
         isDisabled={pagination.currentPage === 1}

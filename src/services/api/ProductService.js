@@ -12,11 +12,9 @@ export const fetchProducts = async (userSearch, page) => {
     }
 
     const data = await response.json();
-    return data; // Return the data received from the API
+    return data;
   } catch (error) {
     console.error("Error fetching products:", error);
     throw error;
   }
 };
-
-// fetchProducts("shoes");
