@@ -6,27 +6,61 @@ import { ProductGrid } from "./components/layout/ProductGrid";
 import PaginationBtns from "./components/ui/PaginationBtns";
 import { useUserContext } from "./services/context/UserContext";
 import SearchComponent from "./components/ui/SearchComponent";
+import { Button, ButtonGroup } from "@nextui-org/react";
 
 function App() {
-  const { userSearch, setProducts, setPagination } = useUserContext();
+  const { userSearch, setUserSearch, setProducts, setPagination } =
+    useUserContext();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchProducts(userSearch, 1);
-        setProducts(data.results);
-        setPagination(data.pagination);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-    fetchData();
+    fetchData(userSearch);
   }, []);
+  const fetchData = async (product) => {
+    try {
+      const data = await fetchProducts(product, 1);
+      setProducts(data.results);
+      setPagination(data.pagination);
+      setUserSearch(product);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
 
   return (
     <div className="bg-wallpaper min-h-screen">
       <NavBar />
       <SearchComponent classes="py-4 px-10 block sm:hidden bg-black/80" />
+
+      <ButtonGroup className="flex justify-center">
+        <Button
+          onClick={() => {
+            fetchData("shirts");
+          }}
+        >
+          Shirts
+        </Button>
+        <Button
+          onClick={() => {
+            fetchData("pants");
+          }}
+        >
+          Pants
+        </Button>
+        <Button
+          onClick={() => {
+            fetchData("shorts");
+          }}
+        >
+          Shorts
+        </Button>
+        <Button
+          onClick={() => {
+            fetchData("shoes");
+          }}
+        >
+          Shoes
+        </Button>
+      </ButtonGroup>
       <PaginationBtns />
       <div className="flex justify-center">
         <ProductGrid />
