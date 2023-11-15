@@ -7,11 +7,11 @@ import { faGem } from "@fortawesome/free-regular-svg-icons";
 import { useUserContext } from "../../services/context/UserContext";
 import SearchComponent from "../ui/SearchComponent";
 
-export default function NavBar({ setResults }) {
+export default function NavBar() {
   const { cart } = useUserContext();
 
   return (
-    <Navbar isBordered className="p-3 opacity-95 shadow-lg z-50">
+    <Navbar isBordered className="p-3 opacity-95 z-50">
       <NavbarContent justify="start">
         <NavbarBrand className="sm:mr-4">
           <FontAwesomeIcon icon={faGem} className="text-5xl p-2" />
