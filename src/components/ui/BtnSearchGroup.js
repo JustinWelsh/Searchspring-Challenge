@@ -3,9 +3,9 @@ import React from "react";
 
 const BtnSearchGroup = ({ fetchData }) => {
   return (
-    <div className="flex justify-center bg-[#F1EBDF] opacity-95">
+    <div className="flex justify-center bg-[#F1EBDF] opacity-95 py-1">
       <Button
-        className="uppercase focus:border-b-4 border-black"
+        className="rounded uppercase focus:border-b-4 border-black focus:font-bold"
         variant="light"
         onClick={() => {
           fetchData("shirts");
@@ -14,7 +14,7 @@ const BtnSearchGroup = ({ fetchData }) => {
         Shirts
       </Button>
       <Button
-        className="uppercase focus:border-b-4 border-black"
+        className="rounded uppercase focus:border-b-4 border-black focus:font-bold"
         variant="light"
         onClick={() => {
           fetchData("pants");
@@ -23,7 +23,7 @@ const BtnSearchGroup = ({ fetchData }) => {
         Pants
       </Button>
       <Button
-        className="uppercase focus:border-b-4 border-black"
+        className="rounded uppercase focus:border-b-4 border-black focus:font-bold"
         variant="light"
         onClick={() => {
           fetchData("shorts");
@@ -32,7 +32,7 @@ const BtnSearchGroup = ({ fetchData }) => {
         Shorts
       </Button>
       <Button
-        className="uppercase focus:border-b-4 border-black"
+        className="rounded uppercase focus:border-b-4 border-black focus:font-bold"
         variant="light"
         onClick={() => {
           fetchData("shoes");
