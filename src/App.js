@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="bg-wallpaper min-h-screen">
-      <NavBar />
+      <NavBar fetchData={fetchData} />
       <BtnSearchGroup fetchData={fetchData} />
       <SearchComponent classes="py-4 px-10 block sm:hidden bg-black/80" />
 
