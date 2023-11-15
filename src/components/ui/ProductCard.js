@@ -6,13 +6,17 @@ import {
   Modal,
   useDisclosure,
 } from "@nextui-org/react";
-import React from "react";
+import React, { useState } from "react";
 import ProductDetails from "./ProductDetails";
 import AddToCartBtn from "../common/AddToCartBtn";
 
 const ProductCard = ({ product }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [imageSrc, setImageSrc] = useState(product.thumbnailImageUrl);
 
+  const handleImgError = () => {
+    setImageSrc(`${process.env.PUBLIC_URL}/images/oops!.jpg`);
+  };
   return (
     <Card className="py-4 w-[290]">
       <CardBody className="overflow-visible py-2">
@@ -31,10 +35,10 @@ const ProductCard = ({ product }) => {
           shadow="sm"
           alt={product.title}
           className="object-cover rounded-xl"
-          src={product.thumbnailImageUrl}
-          fallbackSrc={`${process.env.PUBLIC_URL}/images/oops!.jpg`}
+          src={imageSrc}
           width={267}
           height={400}
+          onError={handleImgError}
         />
       </CardBody>
       <CardFooter className="block text-small justify-between">
