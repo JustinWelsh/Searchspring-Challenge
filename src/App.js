@@ -7,6 +7,7 @@ import PaginationBtns from "./components/ui/PaginationBtns";
 import { useUserContext } from "./services/context/UserContext";
 import SearchComponent from "./components/ui/SearchComponent";
 import BtnSearchGroup from "./components/ui/BtnSearchGroup";
+import MsgCarousel from "./components/ui/MsgCarousel";
 
 function App() {
   const { userSearch, setUserSearch, setProducts, setPagination } =
@@ -29,7 +30,14 @@ function App() {
   return (
     <div className="bg-wallpaper min-h-screen">
       <NavBar fetchData={fetchData} />
-      <BtnSearchGroup fetchData={fetchData} />
+      <BtnSearchGroup fetchData={fetchData} classes={"lg:hidden"} />
+      <MsgCarousel
+        texts={[
+          "Free standard shipping over $75",
+          "20% student discount!",
+          "Free 30-day return policy",
+        ]}
+      />
       <SearchComponent classes="py-4 px-10 block sm:hidden bg-black/80" />
 
       <PaginationBtns />
