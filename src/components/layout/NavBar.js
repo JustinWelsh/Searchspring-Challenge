@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem } from "@fortawesome/free-regular-svg-icons";
 import { useUserContext } from "../../services/context/UserContext";
 import SearchComponent from "../ui/SearchComponent";
+import BtnSearchGroup from "../ui/BtnSearchGroup";
 
 export default function NavBar({ fetchData }) {
   const { cart } = useUserContext();
@@ -30,7 +31,7 @@ export default function NavBar({ fetchData }) {
           </div>
         </li>
       </NavbarContent>
-
+      <BtnSearchGroup fetchData={fetchData} classes={"hidden lg:block"} />
       <NavbarContent as="div" className="items-center" justify="end">
         <SearchComponent classes="hidden md:block" />
 
