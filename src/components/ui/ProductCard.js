@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
       <CardBody className="overflow-visible py-2">
         {product.on_sale[0] === "Yes" && (
           <>
-            <div className="py-5 px-20 absolute z-30 top-2 -left-[65px] -rotate-45 bg-red-500 opacity-80"></div>
+            <div className="py-5 px-28 absolute z-30 top-2 -left-[90px] -rotate-45 bg-red-500 opacity-80"></div>
 
             <span className="p-2 px-12 text-white absolute z-30 -top-1 -left-12 -rotate-45 font-bold">
               On Sale!
