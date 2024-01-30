@@ -12,7 +12,7 @@ export default function NavBar({ fetchData }) {
   const { cart } = useUserContext();
 
   return (
-    <Navbar isBordered className="p-3 opacity-95 z-50">
+    <Navbar isBordered className="bg-white p-3 opacity-95 z-50">
       <NavbarContent justify="start">
         <li
           className="sm:mr-4 flex items-center hover:cursor-pointer"

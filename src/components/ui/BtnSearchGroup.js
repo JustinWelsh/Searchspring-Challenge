@@ -3,7 +3,7 @@ import React from "react";
 
 const BtnSearchGroup = ({ fetchData, classes }) => {
   return (
-    <div className={`flex justify-center opacity-95 py-1 ${classes}`}>
+    <div className={`flex justify-center bg-white opacity-95 py-1 ${classes}`}>
       <Button
         className="rounded-none uppercase focus:border-b-2 border-black focus:font-bold"
         variant="light"

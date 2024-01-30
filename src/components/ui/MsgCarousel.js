@@ -11,7 +11,7 @@ const MsgCarousel = ({ texts, interval = 5000 }) => {
     return () => clearInterval(intervalId);
   }, [currentIndex, interval, texts.length]);
 
-  return <div className="msg-carousel">{texts[currentIndex]}</div>;
+  return <div className="msg-carousel shadow-xl">{texts[currentIndex]}</div>;
 };
 
 export default MsgCarousel;
