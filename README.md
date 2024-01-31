@@ -28,4 +28,4 @@
 - Implemented an "Add to Cart" counter.
 - Displayed a fallback image if the thumbnail was unavailable.
 - Showcased an "On Sale" banner for products that were currently discounted.
-- Implemented a Product Details Modal: Now, users can view detailed information about a product in a modal, enhancing the overall user experience.
+- Implemented a Product Details Modal: Now, users can view detailed information about a product in a modal, enhancing the overall user experience
